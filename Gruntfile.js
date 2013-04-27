@@ -26,7 +26,7 @@ module.exports = function( grunt ) {
 			dist : {
 				options : { style: 'compressed' },
 				files : {
-					'<%= css_build_path %>/style.css' : '<%= css_src_path %>/style.sass'
+					'<%= css_build_path %>/style.css' : '<%= css_src_path %>/style.scss'
 				}
 			}
 		},
