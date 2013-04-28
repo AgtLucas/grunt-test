@@ -27,6 +27,9 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'<%= meta.deployPath %>style.css' : '<%= meta.srcPath %>style.scss'
+				},
+				options: {
+					style: 'compressed'
 				}
 			}
 		},
