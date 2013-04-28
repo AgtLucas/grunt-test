@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 				files: [
 					'<%= meta.srcPath %>*.scss'
 				],
-				tasks: ['sass', 'livereload']
+				tasks: ['sass']
 			}
 		}
 	});
@@ -71,5 +71,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['sass', 'livereload-start', 'connect', 'regarde']);
+	grunt.registerTask('default', ['watch']);
 };
