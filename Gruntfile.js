@@ -6,7 +6,7 @@ module.exports = function( grunt ) {
 		pkg : grunt.file.readJSON( 'package.json' ),
 
 		// SASS and JS directories
-		css_src_path	: '/_sass',
+		css_src_path	: '/sass',
 		css_build_path	: '/css',
 		js_src_path		: '/_js',
 		js_build_path		: '/js',
