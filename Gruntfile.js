@@ -1,12 +1,3 @@
-'use strict';
-
-var path = require('path');
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-
-var folderMount = function folderMount(connect, point) {
-	return connect.static(path.resolve(point));
-};
-
 module.exports = function(grunt) {
 
 	//	Project configuration
@@ -34,24 +25,11 @@ module.exports = function(grunt) {
 			}
 		},
 
-		livereload: {
-			port: 35729
-		},
-		connect: {
-			livereload: {
-				options: {
-					port: 9001,
-					middleware: function(connect, options) {
-						return [lrSnippet, folderMount(connect, options.base)]
-					}
-				}
-			}
-		},
-		// Configurations to be run (and then tested)
-		regarde: {
-			txt: {
-				files: '**/*.txt',
-				tasks: ['livereload']
+		reload: {
+			port: 6001,
+			proxy: {
+				host: 'localhost',
+				port: 8000
 			}
 		},
 
@@ -60,16 +38,17 @@ module.exports = function(grunt) {
 				files: [
 					'<%= meta.srcPath %>*.scss'
 				],
-				tasks: ['sass']
+				tasks: ['sass', 'reload'],
+				options: {
+					nospawn: true
+				}
 			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-regarde');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-livereload');
 	grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-reload');
 
 	grunt.registerTask('default', ['watch']);
 };

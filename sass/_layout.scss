@@ -1,7 +1,9 @@
 body {
-	background-color: teal;
+	background-color: tomato;
 	color: white;
 	font-size: 16px;
+	margin: 0;
+	padding: 0;
 }
 .main {
 	width: 60em;
@@ -9,6 +11,13 @@ body {
 	margin: auto;
 }
 .contents {
-	padding: 5px;
 	margin: auto;
+	background-color: tomato;
+	color: #f3f3f3;
+}
+.header {
+	padding: 10px;
+}
+aside {
+	font-size: 20px;
 }
