@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 		//	Metadata
 
 		meta: {
+			basePath: '../',
 			srcPath: 'sass/',
 			deployPath: 'css/'
 		},
