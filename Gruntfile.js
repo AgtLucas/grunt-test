@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 		regarde: {
 			css: {
 				files: '<%= meta.srcPath %>*.scss',
-				tasks: ['sass'],
+				tasks: ['sass', 'livereload'],
 				events: true
 			},
 		}
