@@ -18,7 +18,6 @@ module.exports = function(grunt) {
 		//	Metadata
 
 		meta: {
-			basePath: '../',
 			srcPath: 'sass/',
 			deployPath: 'css/'
 		},
@@ -51,8 +50,8 @@ module.exports = function(grunt) {
 		},
 
 		regarde: {
-			css: {
-				files: '<%= meta.srcPath %>*.scss',
+			watch: {
+				files: ['<%= meta.srcPath %>*.scss', '*.html'],
 				tasks: ['sass', 'livereload'],
 				events: true
 			},
