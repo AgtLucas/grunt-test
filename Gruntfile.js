@@ -1,4 +1,7 @@
-"use strict";
+'use strict';
+
+var path = require('path');
+var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 
 module.exports = function(grunt) {
 
