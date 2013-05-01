@@ -25,12 +25,12 @@ module.exports = function(grunt) {
 			}
 		},
 
-		reload: {
-			port: 6001,
-			proxy: {
-				host: 'localhost',
-				port: 8000
-			}
+		regarde: {
+			css: {
+				files: '<%= meta.srcPath %>*.scss',
+				tasks: ['sass'],
+				events: true
+			},
 		},
 
 		watch: {
@@ -48,7 +48,8 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-regarde');
     grunt.loadNpmTasks('grunt-contrib-livereload');
 
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['regarde']);
 };
