@@ -60,7 +60,8 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-regarde');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-livereload');
 
-	grunt.registerTask('default', ['regarde']);
+	grunt.registerTask('default', ['livereload-start', 'connect', 'regarde']);
 };
