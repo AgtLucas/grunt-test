@@ -31,25 +31,12 @@ module.exports = function(grunt) {
 				tasks: ['sass'],
 				events: true
 			},
-		},
-
-		watch: {
-			scripts: {
-				files: [
-					'<%= meta.srcPath %>*.scss'
-				],
-				tasks: ['sass', 'reload'],
-				options: {
-					nospawn: true
-				}
-			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-regarde');
-    grunt.loadNpmTasks('grunt-contrib-livereload');
+	grunt.loadNpmTasks('grunt-regarde');
+	grunt.loadNpmTasks('grunt-contrib-livereload');
 
 	grunt.registerTask('default', ['regarde']);
 };
