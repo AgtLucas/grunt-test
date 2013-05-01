@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-reload');
+    grunt.loadNpmTasks('grunt-contrib-livereload');
 
 	grunt.registerTask('default', ['watch']);
 };
